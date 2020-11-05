@@ -1,5 +1,11 @@
 'use strict';
 
 require('dotenv').config();
+const knex = require('knex');
+const knexConfig = require('./knexfile');
+const createServer = require('./server');
+const createLogger = require('./logger');
 
-console.log('It works!');
+const db = knex(knexConfig);
+const logger = createLogger();
+createServer({ db, logger });

@@ -2,13 +2,19 @@
 
 require('dotenv').config();
 const knexStringcase = require('knex-stringcase');
+const {
+	POSTGRES_HOST,
+	POSTGRES_USER,
+	POSTGRES_PASSWORD,
+	POSTGRES_DB,
+} = require('./env');
 
 module.exports = knexStringcase({
 	client: 'pg',
 	connection: {
-		host: process.env.POSTGRES_HOST,
-		user: process.env.POSTGRES_USER,
-		password: process.env.POSTGRES_PASSWORD,
-		database: process.env.POSTGRES_DB,
+		host: POSTGRES_HOST,
+		user: POSTGRES_USER,
+		password: POSTGRES_PASSWORD,
+		database: POSTGRES_DB,
 	},
 });

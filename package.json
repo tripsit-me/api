@@ -5,19 +5,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
-    "dev": "nodemon --inspect ./index.js",
-    "test": "jest"
+    "start": "NODE_ENV=production node ./index.js",
+    "dev": "NODE_ENV=development nodemon --inspect ./index.js",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "eslint index.js env.js knexfile.js server/**/*.js",
+    "test:unit": "NODE_ENV=test jest"
   },
   "keywords": [],
   "author": "SevenCats <snowcolton@hotmail.com>",
   "license": "MIT",
   "dependencies": {
+    "argon2": "^0.27.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "express-yup-middleware": "^1.1.2",
     "knex": "^0.21.12",
     "knex-stringcase": "^1.4.3",
-    "pg": "^8.4.2"
+    "pg": "^8.4.2",
+    "trim-request-body": "^1.0.1",
+    "winston": "^3.3.3",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
     "eslint": "^7.2.0",
