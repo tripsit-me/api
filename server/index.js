@@ -1,7 +1,6 @@
 'use strict';
 
 const express = require('express');
-const trimRequestBody = require('trim-request-body');
 const errorMiddleware = require('./middleware/error');
 const applyRouter = require('./router');
 const { HTTP_PORT } = require('../env');
@@ -11,10 +10,7 @@ module.exports = function createServer({ db, logger }) {
 	const dependencies = { app, db, logger };
 
 	app.use(express.json());
-	app.use(trimRequestBody());
-
 	applyRouter(dependencies);
-
 	app.use(errorMiddleware(dependencies));
 
 	app.listen(HTTP_PORT, error => {

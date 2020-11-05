@@ -1,6 +1,5 @@
 'use strict';
 
-require('dotenv').config();
 const knexStringcase = require('knex-stringcase');
 const {
 	POSTGRES_HOST,

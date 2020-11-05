@@ -18,7 +18,7 @@ module.exports = function createLogger() {
 	});
 
 	if (process.env.NODE_ENV !== 'production') {
-		logger.add(new winston.transport.Console({ format: winston.format.simple() }));
+		logger.add(new winston.transports.Console({ format: winston.format.simple() }));
 	}
 
 	return logger;

@@ -1,5 +1,7 @@
 'use strict';
 
+if (!process.env.HTTP_PORT) require('dotenv').config(); // eslint-disable-line global-require
+
 exports.NODE_ENV = process.env.NODE_ENV;
 exports.HTTP_PORT = parseInt(process.env.HTTP_PORT, 10);
 
