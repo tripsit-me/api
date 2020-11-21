@@ -2,7 +2,9 @@
 
 module.exports = {
 	testEnvironment: 'node',
-	testMatch: ['<rootDir>/tests/**/*.test.js'],
+	testMatch: [
+		'<rootDir>/__tests__/*.test.js',
+		'<rootDir>/server/**/__tests__/*.test.js',
+	],
 	coveragePathIgnorePatterns: ['/node_modules/'],
-	setupFiles: ['<rootDir>/tests/setup.js'],
 };
