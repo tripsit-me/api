@@ -1,0 +1,19 @@
+{
+	"include": ["./src", "./types", "./migrations", "./knexfile.ts"],
+	"exclude": ["./node_modules"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["ESNext"],
+		"outDir": "./dist",
+		"typeRoots": ["./types", "./node_modules/@types"],
+    "noEmit": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
